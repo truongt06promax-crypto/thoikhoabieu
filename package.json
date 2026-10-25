@@ -1,0 +1,14 @@
+{
+  "name": "timetable-viewer-dhhp",
+  "version": "1.0.0",
+  "description": "Ung dung hien thi thoi khoa bieu Truong Dai hoc Hai Phong",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0"
+  }
+}

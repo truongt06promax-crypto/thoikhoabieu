@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập - Thời khóa biểu ĐHHP</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="login-page">
+    <div class="login-box">
+      <h1>Thời khóa biểu</h1>
+      <p class="subtitle">Trường Đại học Hải Phòng</p>
+
+      <div id="errorMsg" class="error-msg"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Tên đăng nhập</label>
+          <input type="text" id="username" name="username" placeholder="Ví dụ: sv001 hoặc gv001" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Mật khẩu</label>
+          <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+      </form>
+
+      <div class="demo-accounts">
+        <strong>Tài khoản demo</strong> (mật khẩu: <code>123456</code>)<br>
+        Sinh viên: <code>sv001</code>, <code>sv002</code>, <code>sv003</code><br>
+        Giảng viên: <code>gv001</code>, <code>gv002</code>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Nếu đã đăng nhập thì chuyển thẳng
+    fetch('/api/auth/me')
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          window.location.href = data.user.role === 'student' ? '/student.html' : '/lecturer.html';
+        }
+      })
+      .catch(() => {});
+
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const errorEl = document.getElementById('errorMsg');
+      errorEl.classList.remove('show');
+      errorEl.textContent = '';
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+
+        if (!data.success) {
+          errorEl.textContent = data.message || 'Đăng nhập thất bại';
+          errorEl.classList.add('show');
+          return;
+        }
+
+        // Chuyển trang theo vai trò
+        if (data.user.role === 'student') {
+          window.location.href = '/student.html';
+        } else {
+          window.location.href = '/lecturer.html';
+        }
+      } catch (err) {
+        errorEl.textContent = 'Không kết nối được máy chủ. Hãy kiểm tra lại.';
+        errorEl.classList.add('show');
+      }
+    });
+  </script>
+</body>
+</html>

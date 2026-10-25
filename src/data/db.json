@@ -1,0 +1,181 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "gv001",
+      "password": "123456",
+      "role": "lecturer",
+      "fullName": "Nguyễn Văn An",
+      "refId": 1
+    },
+    {
+      "id": 2,
+      "username": "gv002",
+      "password": "123456",
+      "role": "lecturer",
+      "fullName": "Trần Thị Bình",
+      "refId": 2
+    },
+    {
+      "id": 3,
+      "username": "sv001",
+      "password": "123456",
+      "role": "student",
+      "fullName": "Lê Minh Cường",
+      "refId": 1
+    },
+    {
+      "id": 4,
+      "username": "sv002",
+      "password": "123456",
+      "role": "student",
+      "fullName": "Phạm Thị Dung",
+      "refId": 2
+    },
+    {
+      "id": 5,
+      "username": "sv003",
+      "password": "123456",
+      "role": "student",
+      "fullName": "Hoàng Văn Em",
+      "refId": 3
+    }
+  ],
+  "schedules": [
+    {
+      "id": 1,
+      "studentIds": [1, 2],
+      "lecturerId": 1,
+      "dayOfWeek": 2,
+      "dayName": "Thứ 2",
+      "startTime": "07:30",
+      "endTime": "09:30",
+      "subjectCode": "MH001",
+      "subjectName": "Cơ sở dữ liệu",
+      "sectionCode": "LHP001",
+      "roomCode": "A101",
+      "lecturerName": "Nguyễn Văn An",
+      "semester": "2025-2026-1"
+    },
+    {
+      "id": 2,
+      "studentIds": [1, 2],
+      "lecturerId": 1,
+      "dayOfWeek": 4,
+      "dayName": "Thứ 4",
+      "startTime": "07:30",
+      "endTime": "09:30",
+      "subjectCode": "MH001",
+      "subjectName": "Cơ sở dữ liệu",
+      "sectionCode": "LHP001",
+      "roomCode": "A101",
+      "lecturerName": "Nguyễn Văn An",
+      "semester": "2025-2026-1"
+    },
+    {
+      "id": 3,
+      "studentIds": [1, 2],
+      "lecturerId": 2,
+      "dayOfWeek": 3,
+      "dayName": "Thứ 3",
+      "startTime": "09:45",
+      "endTime": "11:45",
+      "subjectCode": "MH002",
+      "subjectName": "Kỹ nghệ phần mềm",
+      "sectionCode": "LHP002",
+      "roomCode": "A202",
+      "lecturerName": "Trần Thị Bình",
+      "semester": "2025-2026-1"
+    },
+    {
+      "id": 4,
+      "studentIds": [1, 2],
+      "lecturerId": 2,
+      "dayOfWeek": 5,
+      "dayName": "Thứ 5",
+      "startTime": "09:45",
+      "endTime": "11:45",
+      "subjectCode": "MH002",
+      "subjectName": "Kỹ nghệ phần mềm",
+      "sectionCode": "LHP002",
+      "roomCode": "A202",
+      "lecturerName": "Trần Thị Bình",
+      "semester": "2025-2026-1"
+    },
+    {
+      "id": 5,
+      "studentIds": [1, 2],
+      "lecturerId": 1,
+      "dayOfWeek": 2,
+      "dayName": "Thứ 2",
+      "startTime": "13:00",
+      "endTime": "15:00",
+      "subjectCode": "MH003",
+      "subjectName": "Lập trình Web",
+      "sectionCode": "LHP003",
+      "roomCode": "B305",
+      "lecturerName": "Nguyễn Văn An",
+      "semester": "2025-2026-1"
+    },
+    {
+      "id": 6,
+      "studentIds": [1, 2],
+      "lecturerId": 1,
+      "dayOfWeek": 6,
+      "dayName": "Thứ 6",
+      "startTime": "07:30",
+      "endTime": "09:30",
+      "subjectCode": "MH003",
+      "subjectName": "Lập trình Web",
+      "sectionCode": "LHP003",
+      "roomCode": "B305",
+      "lecturerName": "Nguyễn Văn An",
+      "semester": "2025-2026-1"
+    },
+    {
+      "id": 7,
+      "studentIds": [3],
+      "lecturerId": 2,
+      "dayOfWeek": 3,
+      "dayName": "Thứ 3",
+      "startTime": "13:00",
+      "endTime": "15:00",
+      "subjectCode": "MH004",
+      "subjectName": "Mạng máy tính",
+      "sectionCode": "LHP004",
+      "roomCode": "C110",
+      "lecturerName": "Trần Thị Bình",
+      "semester": "2025-2026-1"
+    },
+    {
+      "id": 8,
+      "studentIds": [3],
+      "lecturerId": 2,
+      "dayOfWeek": 5,
+      "dayName": "Thứ 5",
+      "startTime": "13:00",
+      "endTime": "15:00",
+      "subjectCode": "MH004",
+      "subjectName": "Mạng máy tính",
+      "sectionCode": "LHP004",
+      "roomCode": "C110",
+      "lecturerName": "Trần Thị Bình",
+      "semester": "2025-2026-1"
+    },
+    {
+      "id": 9,
+      "studentIds": [3],
+      "lecturerId": 1,
+      "dayOfWeek": 4,
+      "dayName": "Thứ 4",
+      "startTime": "13:00",
+      "endTime": "15:00",
+      "subjectCode": "MH001",
+      "subjectName": "Cơ sở dữ liệu",
+      "sectionCode": "LHP005",
+      "roomCode": "A202",
+      "lecturerName": "Nguyễn Văn An",
+      "semester": "2025-2026-1"
+    }
+  ]
+}
